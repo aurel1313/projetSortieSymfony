@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="MessDetectorOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="PHPCSFixerOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ChangeListManager">
+    <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Etats.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etats.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Inscriptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Inscriptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lieux.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieux.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Participants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sites.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sites.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sorties.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sorties.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Villes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Villes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="PHPCodeSnifferOptionsConfiguration">
-    <option name="highlightLevel" value="WARNING" />
-    <option name="transferred" value="true" />
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
-  <component name="PhpIncludePathManager">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.2.0\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
@@ -141,16 +168,77 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
-  <component name="PhpStanOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2WWKS3HexE9zCLY0mW0Sxf8Hlid" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PhpUnit">
-    <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
-    </phpunit_settings>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PsalmOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/fil_rouge&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="" />
+      <created>1696842891945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696842891945</updated>
+      <workItem from="1696842892989" duration="223000" />
+      <workItem from="1696843121944" duration="962000" />
+      <workItem from="1696844573915" duration="4022000" />
+      <workItem from="1696851178966" duration="1056000" />
+      <workItem from="1696853617499" duration="58000" />
+      <workItem from="1696853684532" duration="119000" />
+      <workItem from="1696853814893" duration="2700000" />
+      <workItem from="1696856548013" duration="2000" />
+      <workItem from="1696856566253" duration="244000" />
+      <workItem from="1696856826041" duration="469000" />
+      <workItem from="1696857313409" duration="1079000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
