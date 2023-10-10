@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20231010084502.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/pngwing.com.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Participants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Sites.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sites.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ParticipantsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ParticipantsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +171,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -190,6 +203,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\public\image" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
@@ -220,6 +238,52 @@
       <workItem from="1696922938612" duration="5000" />
       <workItem from="1696922947877" duration="7000" />
       <workItem from="1696922965082" duration="15000" />
+      <workItem from="1696922986704" duration="369000" />
+      <workItem from="1696923367560" duration="1143000" />
+      <workItem from="1696924531323" duration="125000" />
+      <workItem from="1696924667628" duration="55000" />
+      <workItem from="1696924742215" duration="91000" />
+      <workItem from="1696924858672" duration="6000" />
+      <workItem from="1696924883187" duration="2000" />
+      <workItem from="1696924893433" duration="15000" />
+      <workItem from="1696924919859" duration="72000" />
+      <workItem from="1696925005188" duration="12000" />
+      <workItem from="1696925023481" duration="20000" />
+      <workItem from="1696925083857" duration="73000" />
+      <workItem from="1696925172249" duration="150000" />
+      <workItem from="1696925348573" duration="98000" />
+      <workItem from="1696925489121" duration="551000" />
+      <workItem from="1696926213592" duration="69000" />
+      <workItem from="1696926302544" duration="24000" />
+      <workItem from="1696926336159" duration="12000" />
+      <workItem from="1696926359824" duration="60000" />
+      <workItem from="1696926427217" duration="135000" />
+      <workItem from="1696926573983" duration="8000" />
+      <workItem from="1696926593749" duration="280000" />
+      <workItem from="1696926886387" duration="14000" />
+      <workItem from="1696926937481" duration="356000" />
+      <workItem from="1696927306220" duration="406000" />
+      <workItem from="1696927731428" duration="169000" />
+      <workItem from="1696927941425" duration="409000" />
+      <workItem from="1696928372830" duration="357000" />
+      <workItem from="1696928751731" duration="786000" />
+      <workItem from="1696929575293" duration="19000" />
+      <workItem from="1696929603307" duration="68000" />
+      <workItem from="1696929677962" duration="196000" />
+      <workItem from="1696929925689" duration="298000" />
+      <workItem from="1696930254860" duration="72000" />
+      <workItem from="1696930336788" duration="82000" />
+      <workItem from="1696930440636" duration="88000" />
+      <workItem from="1696930540017" duration="1021000" />
+      <workItem from="1696931717026" duration="4351000" />
+      <workItem from="1696939627866" duration="815000" />
+      <workItem from="1696940491362" duration="2338000" />
+      <workItem from="1696943520900" duration="21000" />
+      <workItem from="1696943611552" duration="102000" />
+      <workItem from="1696943730524" duration="2011000" />
+      <workItem from="1696945918385" duration="332000" />
+      <workItem from="1696946274448" duration="630000" />
+      <workItem from="1696947208146" duration="376000" />
     </task>
     <servers />
   </component>

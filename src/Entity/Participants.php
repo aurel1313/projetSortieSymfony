@@ -4,10 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ParticipantsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: ParticipantsRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class Participants implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -40,14 +42,17 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $telephone = null;
 
     #[ORM\Column]
-    private ?bool $administrateur = null;
+    private ?bool $administrateur = false;
 
     #[ORM\Column]
-    private ?bool $actif = null;
+    private ?bool $actif = true;
 
     #[ORM\ManyToOne(inversedBy: 'participants')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?sites $site_idsite = null;
+    private ?Sites $site_idsite = null;
+
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified = false;
 
     public function getId(): ?int
     {
@@ -199,6 +204,18 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSiteIdsite(?sites $site_idsite): static
     {
         $this->site_idsite = $site_idsite;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): static
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }

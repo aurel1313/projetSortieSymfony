@@ -39,6 +39,7 @@ class AppFixtures extends Fixture
         $participant1->setAdministrateur(true);
         $participant1->setActif(true);
         $participant1->setSiteIdsite($site);
+        $participant1->setRoles(['ROLE_ADMIN']);
         $manager->persist($participant1);
 
         $etat = new Etats();
