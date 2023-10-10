@@ -10,9 +10,14 @@ use App\Entity\Sorties;
 use App\Entity\Villes;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private UserPasswordHasherInterface $userPasswordHasher;
+    public function __construct(UserPasswordHasherInterface $userPasswordHasher){
+        $this->userPasswordHasher = $userPasswordHasher;
+    }
     public function load(ObjectManager $manager): void
     {
         $site = new Sites();
@@ -25,7 +30,12 @@ class AppFixtures extends Fixture
         $participant1->setPrenom('Thierry');
         $participant1->setTelephone('0624598724');
         $participant1->setEmail('titi.dupont@gmail.com');
-        $participant1->setPassword('PasHashe'); /* Pas encore terminé A FAIRE --> Corentin */
+        $participant1->setPassword(
+            $this->userPasswordHasher->hashPassword(
+                $participant1,
+                'azerty'
+            )
+        );
         $participant1->setAdministrateur(true);
         $participant1->setActif(true);
         $participant1->setSiteIdsite($site);

@@ -18,16 +18,16 @@ class Sites
     #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
-    #[ORM\OneToMany(mappedBy: 'site_idsite', targetEntity: Participants::class)]
-    private Collection $participants;
-
     #[ORM\OneToMany(mappedBy: 'site_idsite', targetEntity: Sorties::class)]
     private Collection $sorties;
 
+    #[ORM\OneToMany(mappedBy: 'site_idsite', targetEntity: Participants::class)]
+    private Collection $participants;
+
     public function __construct()
     {
-        $this->participants = new ArrayCollection();
         $this->sorties = new ArrayCollection();
+        $this->participants = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -43,36 +43,6 @@ class Sites
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Participants>
-     */
-    public function getParticipants(): Collection
-    {
-        return $this->participants;
-    }
-
-    public function addParticipant(Participants $participant): static
-    {
-        if (!$this->participants->contains($participant)) {
-            $this->participants->add($participant);
-            $participant->setSiteIdsite($this);
-        }
-
-        return $this;
-    }
-
-    public function removeParticipant(Participants $participant): static
-    {
-        if ($this->participants->removeElement($participant)) {
-            // set the owning side to null (unless already changed)
-            if ($participant->getSiteIdsite() === $this) {
-                $participant->setSiteIdsite(null);
-            }
-        }
 
         return $this;
     }
@@ -101,6 +71,36 @@ class Sites
             // set the owning side to null (unless already changed)
             if ($sorty->getSiteIdsite() === $this) {
                 $sorty->setSiteIdsite(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Participants>
+     */
+    public function getParticipants(): Collection
+    {
+        return $this->participants;
+    }
+
+    public function addParticipant(Participants $participant): static
+    {
+        if (!$this->participants->contains($participant)) {
+            $this->participants->add($participant);
+            $participant->setSiteIdsite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipant(Participants $participant): static
+    {
+        if ($this->participants->removeElement($participant)) {
+            // set the owning side to null (unless already changed)
+            if ($participant->getSiteIdsite() === $this) {
+                $participant->setSiteIdsite(null);
             }
         }
 

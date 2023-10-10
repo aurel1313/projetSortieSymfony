@@ -3,17 +3,29 @@
 namespace App\Entity;
 
 use App\Repository\ParticipantsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: ParticipantsRepository::class)]
-class Participants
+class Participants implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(length: 180, unique: true)]
+    private ?string $email = null;
+
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
+    private ?string $password = null;
 
     #[ORM\Column(length: 50)]
     private ?string $pseudo = null;
@@ -27,12 +39,6 @@ class Participants
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $telephone = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $email = null;
-
-    #[ORM\Column(length: 100)]
-    private ?string $password = null;
-
     #[ORM\Column]
     private ?bool $administrateur = null;
 
@@ -43,21 +49,74 @@ class Participants
     #[ORM\JoinColumn(nullable: false)]
     private ?sites $site_idsite = null;
 
-    #[ORM\OneToMany(mappedBy: 'participant_idparticipant', targetEntity: Sorties::class)]
-    private Collection $sorties;
-
-    #[ORM\OneToMany(mappedBy: 'participant_idparticipant', targetEntity: Inscriptions::class)]
-    private Collection $inscriptions;
-
-    public function __construct()
-    {
-        $this->sorties = new ArrayCollection();
-        $this->inscriptions = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getPseudo(): ?string
@@ -108,30 +167,6 @@ class Participants
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): static
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    public function getPassword(): ?string
-    {
-        return $this->password;
-    }
-
-    public function setPassword(string $password): static
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
     public function isAdministrateur(): ?bool
     {
         return $this->administrateur;
@@ -164,66 +199,6 @@ class Participants
     public function setSiteIdsite(?sites $site_idsite): static
     {
         $this->site_idsite = $site_idsite;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Sorties>
-     */
-    public function getSorties(): Collection
-    {
-        return $this->sorties;
-    }
-
-    public function addSorty(Sorties $sorty): static
-    {
-        if (!$this->sorties->contains($sorty)) {
-            $this->sorties->add($sorty);
-            $sorty->setParticipantIdparticipant($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSorty(Sorties $sorty): static
-    {
-        if ($this->sorties->removeElement($sorty)) {
-            // set the owning side to null (unless already changed)
-            if ($sorty->getParticipantIdparticipant() === $this) {
-                $sorty->setParticipantIdparticipant(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Inscriptions>
-     */
-    public function getInscriptions(): Collection
-    {
-        return $this->inscriptions;
-    }
-
-    public function addInscription(Inscriptions $inscription): static
-    {
-        if (!$this->inscriptions->contains($inscription)) {
-            $this->inscriptions->add($inscription);
-            $inscription->setParticipantIdparticipant($this);
-        }
-
-        return $this;
-    }
-
-    public function removeInscription(Inscriptions $inscription): static
-    {
-        if ($this->inscriptions->removeElement($inscription)) {
-            // set the owning side to null (unless already changed)
-            if ($inscription->getParticipantIdparticipant() === $this) {
-                $inscription->setParticipantIdparticipant(null);
-            }
-        }
 
         return $this;
     }
