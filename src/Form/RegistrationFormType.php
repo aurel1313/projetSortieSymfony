@@ -52,8 +52,3 @@ class RegistrationFormType extends AbstractType
     }
 }
 
-->add('administrateur', CheckboxType::class, [
-    'label' => 'Administrateur',
-    'required' => false,
-    'false_values' => [false],
-]);

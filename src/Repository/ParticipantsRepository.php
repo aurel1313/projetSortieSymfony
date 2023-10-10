@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Participants;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -38,7 +39,21 @@ class ParticipantsRepository extends ServiceEntityRepository implements Password
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
     }
+   public function getRole()
+   {
+       $conn = $this->getEntityManager()->getConnection();
+       $sql = '
+            SELECT * FROM participants p
+         
+            
+            ';
+       $resultSet = $conn->executeQuery($sql);
+       return $resultSet->fetchAllAssociative();
 
+
+    
+   
+   }
 //    /**
 //     * @return Participants[] Returns an array of Participants objects
 //     */

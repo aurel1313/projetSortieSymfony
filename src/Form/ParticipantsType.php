@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Participants;
+use App\Entity\Sites;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -28,7 +29,10 @@ class ParticipantsType extends AbstractType
                 'false_values' => [false],
             ])
             ->add('actif')
-            //->add('site_idsite')
+            ->add('site_idsite',EntityType::class,[
+                'class' => Sites::class,
+                'choice_label' => 'nom'
+            ])
         ;
     }
 
