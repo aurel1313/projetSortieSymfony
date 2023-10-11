@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos villes{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Gestion des villes</h1>
+    <div class="text-center p-3">
+        <a href="{{ path('app_admin') }}" type="button" class="btn btn-light">Retour</a>
+        <a href={{ path('app_admin_villes_ajouter') }} type="button" class="btn btn-light">Ajout des villes</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Code postal</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ville in villes %}
+            <tr class="text-center">
+                <td>{{ ville.nom }}</td>
+                <td>{{ ville.codePostal }}</td>
+                <td>
+                    <a class="btn btn-success" type="submit"  href="{{ path('app_admin_villes_modifier',{'id':ville.id}) }}">Modifier</a>
+                    <a class="btn btn-warning" type="submit"  href="{{ path('app_admin_villes_supprimer',{'id':ville.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

@@ -50,7 +50,7 @@ class LoginController extends AbstractController
             $entityManager->flush();
 
 
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('/accueil');
         }
 
         return $this->render('registration/register.html.twig', [

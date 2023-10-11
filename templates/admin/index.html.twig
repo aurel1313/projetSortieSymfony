@@ -1,14 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Sortie - Administration{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1 class="text-center">Administration</h1>
 
-<div >
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+                <a href="{{ path('app_admin_sorties_lister') }}" type="button" class="btn btn-primary">Gestion sorties</a>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <a href="{{ path('app_admin_villes_lister') }}" type="button" class="btn btn-primary"> Gestion villes</a>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <a href="{{ path('app_admin_sites_lister') }}" type="button" class="btn btn-primary">Gestion sites</a>
+            </div>
+        </div>
+    </div>
+
+<div>
+
+
     <h1>Inscription d'un participant</h1>
     {{ form_start(form) }}
         {{ form_row(form.email) }}
@@ -23,6 +36,5 @@
         <input type="submit" name="envoyer" />
     {{ form_end(form) }}
 
-  
 </div>
 {% endblock %}

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminSortiesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminVillesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/SitesFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/SortiesFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/VillesFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_sites/voir.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_villes/voir.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sorties.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sorties.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,12 +198,14 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\templates" />
+      <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\templates\admin" />
       <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\public\image" />
     </key>
   </component>
@@ -270,7 +288,34 @@
       <workItem from="1697007388507" duration="381000" />
       <workItem from="1697007806858" duration="16000" />
       <workItem from="1697007842818" duration="82000" />
-      <workItem from="1697007934312" duration="12000" />
+      <workItem from="1697007934312" duration="2061000" />
+      <workItem from="1697010065106" duration="21000" />
+      <workItem from="1697010114830" duration="161000" />
+      <workItem from="1697010304909" duration="248000" />
+      <workItem from="1697010570161" duration="44000" />
+      <workItem from="1697010670519" duration="540000" />
+      <workItem from="1697011316284" duration="15000" />
+      <workItem from="1697011336731" duration="1782000" />
+      <workItem from="1697013307471" duration="114000" />
+      <workItem from="1697013442193" duration="54000" />
+      <workItem from="1697013504934" duration="26000" />
+      <workItem from="1697013538260" duration="343000" />
+      <workItem from="1697013895106" duration="110000" />
+      <workItem from="1697014033331" duration="62000" />
+      <workItem from="1697014102076" duration="826000" />
+      <workItem from="1697014947995" duration="63000" />
+      <workItem from="1697015021465" duration="8000" />
+      <workItem from="1697015036908" duration="9000" />
+      <workItem from="1697015058958" duration="5000" />
+      <workItem from="1697015073674" duration="26000" />
+      <workItem from="1697015110307" duration="21000" />
+      <workItem from="1697015174095" duration="18000" />
+      <workItem from="1697015198076" duration="16000" />
+      <workItem from="1697015225154" duration="91000" />
+      <workItem from="1697015335427" duration="37000" />
+      <workItem from="1697015383847" duration="26000" />
+      <workItem from="1697015418284" duration="1839000" />
+      <workItem from="1697017334872" duration="1968000" />
     </task>
     <servers />
   </component>

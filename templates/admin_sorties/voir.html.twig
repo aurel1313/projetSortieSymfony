@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos sorties{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Gestion des sorties</h1>
+    <div class="text-center p-3">
+        <a href="{{ path('app_admin') }}" type="button" class="btn btn-light">Retour</a>
+        <a href={{ path('app_admin_sorties_ajouter') }} type="button" class="btn btn-light">Ajout des sorties</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Durée</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sortie in sorties %}
+            <tr class="text-center">
+                <td>{{ sortie.nom }}</td>
+                <td>{{ sortie.duree }}</td>
+                <td>
+                    <a class="btn btn-success" type="submit"  href="{{ path('app_admin_sorties_modifier',{'id':sortie.id}) }}">Modifier</a>
+                    <a class="btn btn-warning" type="submit"  href="{{ path('app_admin_sorties_supprimer',{'id':sortie.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

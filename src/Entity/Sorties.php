@@ -39,19 +39,19 @@ class Sorties
     private ?string $photoSorties = null;
 
     #[ORM\ManyToOne(inversedBy: 'sorties')]
-    private ?participants $participant_idparticipant = null;
+    private ?Participants $participant_idparticipant = null;
 
     #[ORM\ManyToOne(inversedBy: 'sorties')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?sites $site_idsite = null;
+    private ?Sites $site_idsite = null;
 
     #[ORM\ManyToOne(inversedBy: 'sorties')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?lieux $lieu_idlieu = null;
+    private ?Lieux $lieu_idlieu = null;
 
     #[ORM\ManyToOne(inversedBy: 'sorties')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?etats $etat_idetat = null;
+    private ?Etats $etat_idetat = null;
 
     public function getId(): ?int
     {
