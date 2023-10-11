@@ -26,6 +26,7 @@ class AdminController extends AbstractController
              $participant =$form->getData();
             $entityManager->persist($participant);
             $entityManager->flush();
+            $this->addFlash('success',"Inscription Validée");
             return $this->redirectToRoute('validationInscription');
 
          }

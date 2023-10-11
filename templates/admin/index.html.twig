@@ -32,9 +32,13 @@
     {{ form_row(form.telephone) }}
     {{ form_row(form.administrateur) }}
     {{ form_row(form.actif) }}
-
+    {{ form_row(form.site_idsite) }}
         <input type="submit" name="envoyer" />
     {{ form_end(form) }}
-
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
