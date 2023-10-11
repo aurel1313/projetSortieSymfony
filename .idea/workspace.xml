@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminSortiesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminVillesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/SitesFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/SortiesFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/VillesFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_sites/voir.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_villes/voir.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Sorties.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sorties.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +300,8 @@
       <workItem from="1697015335427" duration="37000" />
       <workItem from="1697015383847" duration="26000" />
       <workItem from="1697015418284" duration="1839000" />
-      <workItem from="1697017334872" duration="1968000" />
+      <workItem from="1697017334872" duration="2575000" />
+      <workItem from="1697019952047" duration="685000" />
     </task>
     <servers />
   </component>
