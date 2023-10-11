@@ -25,8 +25,9 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link" aria-current="page" href="/login">Connexion</a>
-                            <a class="nav-link" aria-current="page" href="/register">Inscription</a>
-                            <a class="nav-link" aria-current="page" href="/logout">Deconnexion</a>
+                            {% if not app.user %}<a class="nav-link" aria-current="page" href="/register">Inscription</a>{% endif %}
+                            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}<a class="nav-link" aria-current="page" href="/logout">Deconnexion</a>{% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}<a class="nav-link" aria-current="page" href="/admin">Administration</a>{% endif %}
                         </div>
                     </div>
                 </div>
