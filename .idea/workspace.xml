@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lieux.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieux.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ParticipantsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ParticipantsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SortiesFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SortiesFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +308,7 @@
       <workItem from="1697015383847" duration="26000" />
       <workItem from="1697015418284" duration="1839000" />
       <workItem from="1697017334872" duration="2575000" />
-      <workItem from="1697019952047" duration="685000" />
+      <workItem from="1697019952047" duration="7352000" />
     </task>
     <servers />
   </component>

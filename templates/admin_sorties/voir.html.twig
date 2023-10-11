@@ -14,14 +14,20 @@
         <thead>
         <tr class="text-center">
             <th>Nom</th>
-            <th>Durée</th>
+            <th>Information</th>
+            <th>Inscription</th>
+            <th>Date début</th>
+            <th>Lieu</th>
         </tr>
         </thead>
         <tbody>
         {% for sortie in sorties %}
             <tr class="text-center">
                 <td>{{ sortie.nom }}</td>
-                <td>{{ sortie.duree }}</td>
+                <td>{{ sortie.infoSorties }}</td>
+                <td>{{ sortie.nombreInscriptionMax }}</td>
+                <td>{{ sortie.dateLimiteInscription | date('d/m/Y') }}</td>
+                <td>{{ sortie.lieuIdlieu.nom}}</td>
                 <td>
                     <a class="btn btn-success" type="submit"  href="{{ path('app_admin_sorties_modifier',{'id':sortie.id}) }}">Modifier</a>
                     <a class="btn btn-warning" type="submit"  href="{{ path('app_admin_sorties_supprimer',{'id':sortie.id}) }}">Supprimer</a>

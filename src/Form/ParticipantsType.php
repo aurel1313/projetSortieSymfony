@@ -25,6 +25,7 @@ class ParticipantsType extends AbstractType
     {
         $builder
             ->add('email',EmailType::class,[
+                'label'=>'Email: ',
                 'constraints'=>[
                     new Email([
                         'message'=>'email "{{value}}" doit avoir un format valide'
@@ -34,6 +35,7 @@ class ParticipantsType extends AbstractType
             ])
             //->add('roles')//
             ->add('password',PasswordType::class,[
+                'label'=>'Mot de passe: ',
                 'hash_property_path' => 'password',
                 'mapped' => false,
                 'constraints'=>[
@@ -46,13 +48,19 @@ class ParticipantsType extends AbstractType
                 ]
             ])
             ->add('pseudo', TextType::class,[
+                'label'=>'Pseudo: ',
                 'constraints'=>[
 
                 ]
             ])
-            ->add('nom')
-            ->add('prenom')
+            ->add('nom',TextType::class,[
+            'label'=>'Nom: ',
+                ])
+            ->add('prenom', TextType::class,[
+                'label'=>'Prenom: ',
+            ])
             ->add('telephone',TextType::class,[
+                'label'=>'Téléphone: ',
                 'constraints'=>[
                     new Regex([
                         'pattern' => '/^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/',
@@ -61,16 +69,17 @@ class ParticipantsType extends AbstractType
                 ]
             ])
             ->add('administrateur', CheckboxType::class, [
-                'label' => 'Administrateur',
+                'label' => 'Administrateur: ',
                 'required' => false,
 
             ])
             ->add('actif',CheckboxType::class,[
-                'label'=>'actif',
+                'label'=>'Actif: ',
                  'required'=>false,
                 'false_values' => [false]
             ])
             ->add('site_idsite',EntityType::class,[
+                'label'=>'Site: ',
                 'class' => Sites::class,
                 'choice_label' => 'nom'
             ])

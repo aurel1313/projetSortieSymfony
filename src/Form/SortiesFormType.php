@@ -8,6 +8,7 @@ use App\Entity\Sites;
 use App\Entity\Etats;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,9 +18,11 @@ class SortiesFormType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('date_heure_debut')
+            ->add('date_heure_debut',DateTimeType::class,[
+                'widget' =>'single_text'])
             ->add('duree')
-            ->add('date_limite_inscription')
+            ->add('date_limite_inscription',DateTimeType::class,[
+                'widget' =>'single_text'])
             ->add('nombre_inscription_max')
             ->add('info_sorties')
             ->add('motif_annulation')
@@ -34,11 +37,11 @@ class SortiesFormType extends AbstractType
                 'mapped' => false,
                 'choice_label' => 'nom'
             ])
-//            ->add('lieu_idlieu_id', EntityType::class,[
-//                'class' => Lieux::class,
-//                'mapped' => false,
-//                'choice_label' => 'nom'
-//            ])
+            ->add('lieu_idlieu_id', EntityType::class,[
+                'class' => Lieux::class,
+                'mapped' => false,
+                'choice_label' => 'nom'
+            ])
             ->add('etat_idetat_id',EntityType::class,[
                 'class' => Etats::class,
                 'mapped' => false,

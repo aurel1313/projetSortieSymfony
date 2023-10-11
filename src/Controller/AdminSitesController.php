@@ -40,7 +40,6 @@ class AdminSitesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($sites);
             $entityManager->flush();
-
             return $this->redirectToRoute('app_admin_sites_lister');
         }
 
