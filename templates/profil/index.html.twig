@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div >
+
+   {{ form_start(formProfil) }}
+        {{ form_row(formProfil.pseudo) }}
+        {{ form_row(formProfil.email) }}
+        {{ form_row(formProfil.password) }}
+        {{ form_row(formProfil.nom) }}
+        {{ form_row(formProfil.prenom) }}
+        {{ form_row(formProfil.telephone) }}
+        {{ form_row(formProfil.administrateur) }}
+        {{ form_row(formProfil.actif) }}
+        {{ form_row(formProfil.site_idsite, { 'attr':{'disabled':'disabled'}}) }}
+        <input type="submit" name="modifier" value="modifier profil" />
+    {{ form_end(formProfil) }}
+</div>
+{% endblock %}

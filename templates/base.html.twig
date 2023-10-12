@@ -28,6 +28,7 @@
                             <a class="nav-link" aria-current="page" href="/login">Connexion</a>
                             {% if not app.user %}<a class="nav-link" aria-current="page" href="/register">Inscription</a>{% endif %}
                             {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}<a class="nav-link" aria-current="page" href="/logout">Deconnexion</a>{% endif %}
+                            {% if app.user %}<a class="nav-link" href="{{ path('app_profil', {id: app.user.id}) }}" >{{ app.user.pseudo }}</a>{% endif %}
                             {% if is_granted('ROLE_ADMIN') %}<a class="nav-link" aria-current="page" href="/admin">Administration</a>{% endif %}
                         </div>
                     </div>

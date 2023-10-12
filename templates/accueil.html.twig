@@ -2,8 +2,65 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Test</h1>
-    <div>
+    <h1 class="text-center">Liste des sorties</h1>
 
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr class="text-center">
+                <th>Nom</th>
+                <th>dateHeureDebut</th>
+                <th>duree</th>
+                <th>dateLimiteInscription</th>
+                <th>nombre inscription max</th>
+                <th>infoSortie</th>
+                <th>Participant</th>
+                <th>motif annulation</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{ dump(sortie) }}
+            {% for sorties in sortie %}
+
+
+
+            <tr class="text-center">
+                <th>{{ sorties.nom }}</th>
+                <th>{{ sorties.dateHeureDebut|date('d-m-Y H:i:s') }}</th>
+                <th>{{ sorties.duree }}</th>
+                <th>{{ sorties.dateLimiteInscription|date('d-m-Y H:i:s') }}</th>
+                <th>{{ sorties.nombreInscriptionMax}}</th>
+                <th>{{ sorties.infoSorties }}</th>
+                <th>{{ sorties.participantIdparticipant.nom }}</a></th>
+                <th>{{ sorties.motifAnnulation }}</th>
+                    <th>
+                        <a class="btn btn-primary" href="{{ path('app_sorties_modifier', { 'id' : sorties.id }) }}">modifier</a>
+                        <a class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sorties.id }) }}">supprimer</a>
+                    </th>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <h1>Liste des participants</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>email</th>
+                <th>pseudo</th>
+                <th>telephone</th>
+
+            </tr>
+            <tbody>
+                {% for participant in participants %}
+                <tr>
+                    <td>{{ participant.nom }}</td>
+                    <td>{{ participant.prenom }}</td>
+                    <td>{{ participant.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}
