@@ -18,7 +18,7 @@ class Sorties
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $dateHeureDebut = null;
+        private ?\DateTimeInterface $dateHeureDebut = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $duree = null;

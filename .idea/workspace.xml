@@ -5,16 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_22_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_22__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_23_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_23__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_24_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_12_24__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_15_23_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2023_15_23__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20231011113857.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sorties/editer_sorties.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sorties/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sorties/voir.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminSitesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lieux.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieux.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ParticipantsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ParticipantsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sorties.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sorties.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/SortiesFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SortiesFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sites/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sorties/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_sorties/voir.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_villes/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,32 +177,35 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2WWKS3HexE9zCLY0mW0Sxf8Hlid" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/fil_rouge&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/gmaclart2022/Desktop/projetSortieSymfony/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gmaclart2022\Desktop\projetSortieSymfony\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\templates" />
       <recent name="C:\Users\ccadu2022\Desktop\projetSortieSymfony\templates\admin" />
@@ -307,8 +318,9 @@
       <workItem from="1697015335427" duration="37000" />
       <workItem from="1697015383847" duration="26000" />
       <workItem from="1697015418284" duration="1839000" />
-      <workItem from="1697017334872" duration="2575000" />
-      <workItem from="1697019952047" duration="7352000" />
+      <workItem from="1697017334872" duration="1968000" />
+      <workItem from="1697036186443" duration="3000" />
+      <workItem from="1697094424091" duration="1698000" />
     </task>
     <servers />
   </component>

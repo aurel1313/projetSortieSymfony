@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ sorties.nom }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ sorties.nom }} <i class="fa-solid fa-house"></i></h1>
+                <p class="card-text">{{ sorties.infoSorties }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.dateHeureDebut | date('d/m/Y')}} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.etatIdetat.libelle}} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.lieuIdlieu.nom }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.siteIdsite.nom }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.participantIdparticipant.nom }} {{ sorties.participantIdparticipant.prenom }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.motifAnnulation }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.id }} <i class="fa-solid fa-house"></i></p>
+                <p class="card-text">{{ sorties.duree }} <i class="fa-solid fa-house"></i></p>
+                <a href="{{ path('app_accueil') }}">retour</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mb-4">{{ app.request.get('_route') == "app_sorties_ajouter" ? 'Ajouter' : 'Modifier' }} une sortie</h1>
+
+        {{ form_start(form) }}
+
+        <div class="row">
+            <div class="col-4">
+                {{ form_row(form.nom) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.date_heure_debut) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.duree) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.date_limite_inscription) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.nombre_inscription_max) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.info_sorties) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.photo_sorties) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.participant_idparticipant_id) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.site_idsite) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.etat_idetat_id) }}
+            </div>
+        </div>
+
+        {% if app.request.get('_route') == "app_sorties_ajouter" %}
+            <button class="btn btn-success" type="submit">Ajouter</button>
+        {% else %}
+            <button class="btn btn-primary" type="submit">Modifier</button>
+        {% endif %}
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

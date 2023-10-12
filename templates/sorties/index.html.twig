@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <a href="{{ path('app_sorties_ajouter') }}" class="btn btn-primary">Ajouter une sortie</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Information</th>
+            <th>Inscription</th>
+            <th>Date début</th>
+            <th>Lieu</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sortie in sorties %}
+            <tr class="text-center">
+                <td>{{ sortie.nom }}</td>
+                <td>{{ sortie.infoSorties }}</td>
+                <td>{{ sortie.nombreInscriptionMax }}</td>
+                <td>{{ sortie.dateLimiteInscription | date('d/m/Y') }}</td>
+                <td>{{ sortie.lieuIdlieu.nom}}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('app_sorties_modifier', { 'id' : sortie.id }) }}">modifier</a>}
+                    <a class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sortie.id }) }}">supprimer</a>}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    {% endblock %}
