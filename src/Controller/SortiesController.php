@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Sorties;
 use App\Controller\SortiesController;
+use App\Repository\ParticipantsRepository;
 use App\Repository\SortiesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
