@@ -10,14 +10,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 Use App\Repository\ParticipantsRepository;
+
 class AdminController extends AbstractController
 {
+
     #[Route('/admin', name: 'app_admin')]
-    public function index(ParticipantsRepository $participantsRepository,Request $request , EntityManagerInterface $entityManager): Response
+    #[Route('/admin/modifier/{id}', name: 'app_admin_modifier')]
+    public function index(ParticipantsRepository $participantsRepository,Request $request , EntityManagerInterface $entityManager, int $id = null): Response
     {
 
             //$this->redirect("http://localhost:8000/_error/404");
-        $participant = new Participants();
+        if($id == null){
+            $participant = new Participants();
+        }else{
+            $participant = $participantsRepository->find($id);
+        }
 
         $form = $this->createForm(ParticipantsType::class,$participant);
 
@@ -28,13 +35,26 @@ class AdminController extends AbstractController
             $entityManager->flush();
             $this->addFlash('success',"Inscription Validée");
             return $this->redirectToRoute('validationInscription');
-
          }
+
+        $participant = $participantsRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
             'form'=>$form,
+            'participants' => $participant
         ]);
     }
+
+    #[Route('/admin/supprimer/{id}', name: 'app_admin_supprimer')]
+    public function supprimer(ParticipantsRepository $participantsRepository,Request $request , EntityManagerInterface $entityManager, int $id = null): Response
+    {
+        $participant = $participantsRepository->find($id);
+        $entityManager->remove($participant);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_admin');
+    }
+
     #[Route('/admin/inscrit', name: 'validationInscription')]
 
     public function isSubscribe(): Response{

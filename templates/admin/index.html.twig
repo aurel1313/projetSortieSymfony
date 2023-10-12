@@ -115,4 +115,33 @@
             </div>
         </div>
     </section>
+
+    <h2 class="text-center mt-3">Les participants</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Pseudo</th>
+            <th>Téléphone</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for participant in participants %}
+            <tr class="text-center">
+                <td>{{ participant.nom }}</td>
+                <td>{{ participant.prenom }}</td>
+                <td>{{ participant.pseudo }}</td>
+                <td>{{ participant.telephone }}</td>
+                <td>
+                    <a class="btn btn-success" type="submit"  href="{{ path('app_admin_modifier',{'id':participant.id}) }}">Modifier</a>
+                    <a class="btn btn-warning" type="submit"  href="{{ path('app_admin_supprimer',{'id':participant.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
