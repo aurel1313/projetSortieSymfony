@@ -13,13 +13,13 @@
    {{ form_start(formProfil) }}
         {{ form_row(formProfil.pseudo) }}
         {{ form_row(formProfil.email) }}
-        {{ form_row(formProfil.password) }}
+        {{ form_row(formProfil.password, { 'attr':{'disabled':'disabled'}}) }}
         {{ form_row(formProfil.nom) }}
         {{ form_row(formProfil.prenom) }}
         {{ form_row(formProfil.telephone) }}
         {{ form_row(formProfil.administrateur) }}
         {{ form_row(formProfil.actif) }}
-        {{ form_row(formProfil.site_idsite, { 'attr':{'disabled':'disabled'}}) }}
+        {{ form_row(formProfil.site_idsite) }}
         <input type="submit" name="modifier" value="modifier profil" />
     {{ form_end(formProfil) }}
 </div>
