@@ -54,6 +54,9 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $PhotoProfil = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -216,6 +219,18 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getPhotoProfil(): ?string
+    {
+        return $this->PhotoProfil;
+    }
+
+    public function setPhotoProfil(?string $PhotoProfil): static
+    {
+        $this->PhotoProfil = $PhotoProfil;
 
         return $this;
     }
