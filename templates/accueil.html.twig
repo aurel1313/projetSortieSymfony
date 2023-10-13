@@ -2,67 +2,100 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col text-right">
+                <h6>Date du jour: </h6>
+                <h6>Pseudo: </h6>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-center">Filtrer les sorties</h1>
+    <div class="container text-center">
+        <div class="row d-flex justify-content-center p-3">
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <input  class="form-control"placeholder="Rechercher une sortie par mot-clé">
+                </div>
+                <div class="mb-3">
+                    <input  class="form-control"placeholder="Choisir un site">
+                </div>
+                <div class="mb-3">
+                    <input  class="form-control"placeholder="Choisir le statut">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Sorties dont je suis l'organisateur.trice
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Sorties auxquelles je suis inscrit.e
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Sorties auxquelles je ne suis pas inscrit.e
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Sorties passées
+                    </label>
+                </div>
+
+                <div class="container text-center">
+                    <a class="btn btn-outline-secondary p-1" href="">Rechercher</a> <a class="btn btn-outline-secondary p-1" href="">Réinitialiser</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <h1 class="text-center">Liste des sorties</h1>
+    <div class="text-center p-5">
+        <a class="btn btn-outline-primary" href="">Créer une sortie</a>
+    </div>
 
     <div>
         <table class="table table-striped">
             <thead>
             <tr class="text-center">
                 <th>Nom</th>
-                <th>dateHeureDebut</th>
-                <th>duree</th>
-                <th>dateLimiteInscription</th>
-                <th>nombre inscription max</th>
-                <th>infoSortie</th>
-                <th>Participant</th>
-                <th>motif annulation</th>
+                <th>Date</th>
+                <th>Clôture</th>
+                <th>Inscrit</th>
+                <th>Etat</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            {{ dump(sortie) }}
             {% for sorties in sortie %}
-
-
-
             <tr class="text-center">
                 <th>{{ sorties.nom }}</th>
-                <th>{{ sorties.dateHeureDebut|date('d-m-Y H:i:s') }}</th>
-                <th>{{ sorties.duree }}</th>
-                <th>{{ sorties.dateLimiteInscription|date('d-m-Y H:i:s') }}</th>
-                <th>{{ sorties.nombreInscriptionMax}}</th>
-                <th>{{ sorties.infoSorties }}</th>
-                <th>{{ sorties.participantIdparticipant.nom }}</a></th>
-                <th>{{ sorties.motifAnnulation }}</th>
-                    <th>
-                        <a class="btn btn-primary" href="{{ path('app_sorties_modifier', { 'id' : sorties.id }) }}">modifier</a>
-                        <a class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sorties.id }) }}">supprimer</a>
-                    </th>
+                <th>{{ sorties.dateHeureDebut|date('d-m-Y') }}</th>
+                <th>{{ sorties.dateLimiteInscription|date('d-m-Y') }}</th>
+                <th>0 / {{ sorties.nombreInscriptionMax }}</th>
+                <th>{{ sorties.etatIdetat.libelle }}</th>
+                <th>
+                    {% if is_granted('ROLE_USER') %}
+                        <a class="btn btn-primary" href="">S'inscrire</a>
+                    {% endif %}
+                    <a class="btn btn-outline-primary" href="{{ path('app_sorties_modifier', { 'id' : sorties.id }) }}">modifier</a>
+                    <a class="btn btn-outline-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sorties.id }) }}">supprimer</a>
+                </th>
             </tr>
             {% endfor %}
             </tbody>
         </table>
-        <h1>Liste des participants</h1>
-        <table class="table table-striped">
-            <tr>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>email</th>
-                <th>pseudo</th>
-                <th>telephone</th>
 
-            </tr>
-            <tbody>
-                {% for participant in participants %}
-                <tr>
-                    <td>{{ participant.nom }}</td>
-                    <td>{{ participant.prenom }}</td>
-                    <td>{{ participant.email}}</td>
-                    <td>{{  participant.siteIdsite.nom }} </td>
 
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
     </div>
 {% endblock %}

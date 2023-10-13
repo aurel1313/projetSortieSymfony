@@ -16,22 +16,25 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProfilController extends AbstractController
 {
+
     #[Route('/profil/{id}', name: 'app_profil')]
     #[Route('/profil/modifier/{id}', name: 'app_profil_modifier')]
-    public function index(Request $request,ParticipantsRepository $participantsRepository,EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
+
+
+    public function index(Request $request,ParticipantsRepository $participantsRepository,EntityManagerInterface $entityManager,SluggerInterface $slugger): Response
+
     {
         $id =$request->get('id');
         if($id){
             $participant = $participantsRepository->find($id);
-
         }
         $form= $this->createForm(ParticipantsType::class,$participant);
         $form->handleRequest($request);
         $modifierParticipant = $form->getData();
 
         if($form->isSubmitted() && $form->isValid()){
-
             $participant->setEmail($modifierParticipant->getEmail());
+
             $participant->setPseudo($modifierParticipant->getPseudo());
             $participant->setRoles($modifierParticipant->getRoles());
             $participant->setNom($modifierParticipant->getNom());
@@ -45,6 +48,9 @@ class ProfilController extends AbstractController
                 $safeFilename = $slugger->slug($fileName);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$photo->guessExtension();
 
+            $participant->setPseudo($modifierParticipant->getPassword());
+
+
                 try {
                     $photo->move('photo_directory',$newFilename);
                 }catch(FileException $fileException){
@@ -53,9 +59,7 @@ class ProfilController extends AbstractController
                 $participant->setPhotoProfil($newFilename);
             }
 
-
             $entityManager->persist($participant);
-
             $entityManager->flush();
         }
         return $this->render('profil/index.html.twig', [
