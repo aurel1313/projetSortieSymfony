@@ -1,20 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminLieuxController!{% endblock %}
+{% block title %}Admin - Lieux{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <section class="vh-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                    {% if app.request.get('_route') == 'app_admin_lieux_ajouter' %}
+                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #000000;">Ajouter Lieu</p>
+                                    {% else %}
+                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #000000;">Modifier Lieu</p>
+                                    {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ccadu2022/Desktop/projetSortieSymfony/src/Controller/AdminLieuxController.php'|file_link(0) }}">src/Controller/AdminLieuxController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ccadu2022/Desktop/projetSortieSymfony/templates/admin_lieux/index.html.twig'|file_link(0) }}">templates/admin_lieux/index.html.twig</a></code></li>
-    </ul>
-</div>
+                                    {{ form_start(form, {'attr' : {'class' : 'mx-1 mx-md-4'}}) }}
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            {{ form_row(form.nom, {'attr' : {'class' : 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            {{ form_row(form.rue, {'attr' : {'class' : 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            {{ form_row(form.longitude, {'attr' : {'class' : 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            {{ form_row(form.latitude, {'attr' : {'class' : 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            {{ form_row(form.ville_idville, {'attr' : {'class' : 'form-control'}}) }}
+                                        </div>
+                                    </div>
+
+                                    {% if app.request.get('_route') == 'app_admin_lieux_ajouter' %}
+                                        <button class="btn btn-success" type="submit">Ajouter</button>
+                                    {% else %}
+                                        <button class="btn btn-success" type="submit">Modifier</button>
+                                    {% endif %}
+
+                                    {{ form_end(form)}}
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src={{asset('image/pngwing.com.png')}} class="card-img-top" alt="logo_sortie.com">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

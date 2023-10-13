@@ -12,14 +12,17 @@
 
     <div class="container p-5">
         <div class="row">
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-3 col-md-6 text-center">
                 <a href="{{ path('app_admin_sorties_lister') }}" type="button" class="btn btn-primary">Gestion sorties</a>
             </div>
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-3 col-md-6 text-center">
                 <a href="{{ path('app_admin_villes_lister') }}" type="button" class="btn btn-primary"> Gestion villes</a>
             </div>
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-3 col-md-6 text-center">
                 <a href="{{ path('app_admin_sites_lister') }}" type="button" class="btn btn-primary">Gestion sites</a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <a href="{{ path('app_admin_lieux_lister') }}" type="button" class="btn btn-primary">Gestion Lieux</a>
             </div>
         </div>
     </div>
@@ -100,7 +103,11 @@
                                         </div>
                                     </div>
 
+                                    {% if app.request.get('_route') == 'app_admin' %}
                                         <button class="btn btn-success" type="submit">Ajouter</button>
+                                    {% else %}
+                                        <button class="btn btn-success" type="submit">Modifier</button>
+                                    {% endif %}
 
                                     {{ form_end(form)}}
 

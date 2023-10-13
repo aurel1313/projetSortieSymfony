@@ -3,3 +3,9 @@
 body {
     background-color: #FFFFFF !important;
 }
+#app-footer {
+    position: fixed;bottom: 0;width: 100%;
+}
+.container-fluid.h-custom {
+    padding-top: 2%;
+}

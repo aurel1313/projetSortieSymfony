@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos Lieux{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Gestion des Lieux</h1>
+    <div class="text-center p-3">
+        <a href="{{ path('app_admin') }}" type="button" class="btn btn-light">Retour</a>
+        <a href={{ path('app_admin_lieux_ajouter') }} type="button" class="btn btn-light">Ajout des lieux</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Rue</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Ville</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lieu in lieux %}
+            <tr class="text-center">
+                <td>{{ lieu.nom }}</td>
+                <td>{{ lieu.rue }}</td>
+                <td>{{ lieu.latitude }}</td>
+                <td>{{ lieu.longitude }}</td>
+                <td>{{ lieu.villeIdville.nom }}</td>
+                <td>
+                    <a class="btn btn-success" type="submit"  href="{{ path('app_admin_lieux_modifier',{'id':lieu.id}) }}">Modifier</a>
+                    <a class="btn btn-warning" type="submit"  href="{{ path('app_admin_lieux_supprimer',{'id':lieu.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}
