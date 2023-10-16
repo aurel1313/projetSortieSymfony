@@ -21,6 +21,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
+
 class ParticipantsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -49,6 +50,7 @@ class ParticipantsType extends AbstractType
                     ])
                 ]
             ])
+
             ->add('pseudo', TextType::class,[
                 'label'=>'Pseudo: ',
                 'constraints'=>[
