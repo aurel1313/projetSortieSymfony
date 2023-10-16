@@ -88,6 +88,7 @@ class ParticipantsType extends AbstractType
             ->add('photoProfil',FileType::class, [
                 'label'=>'ajouter une photo de profil',
                 'mapped'=>false,
+                'required'=>false,
                 'constraints'=>[
                     new File([
                         'maxSize'=>'1024k',

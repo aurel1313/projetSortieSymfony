@@ -8,23 +8,33 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div >
-
+<div class="container" >
+        <div class="row justify-content-center">
+                <div class="col-md-6">
+                        <div class="card">
+                                <div class="card-header">
+                                        <h1 class="text-center">Modifier le profil</h1>
+                                </div>
+                                <div class="card-body">
    {{ form_start(formProfil) }}
-        {{ form_row(formProfil.pseudo) }}
-        {{ form_row(formProfil.email) }}
-        {{ form_row(formProfil.password, { 'attr':{'disabled':'disabled'}}) }}
-        {{ form_row(formProfil.nom) }}
-        {{ form_row(formProfil.prenom) }}
-        {{ form_row(formProfil.telephone) }}
-        {{ form_row(formProfil.administrateur) }}
-        {{ form_row(formProfil.actif) }}
-        {{ form_row(formProfil.site_idsite) }}
-        {{ form_row(formProfil.photoProfil) }}
+        {{ form_row(formProfil.pseudo ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.email ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.password, { 'attr':{'disabled':'disabled', 'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.nom ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.prenom ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.telephone ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.administrateur ,{'attr' : {'class' : 'form-check-input'}}) }}
+        {{ form_row(formProfil.actif ,{'attr' : {'class' : 'form-check-input'}}) }}
+        {{ form_row(formProfil.site_idsite ,{'attr' : {'class' : 'form-control'}}) }}
+        {{ form_row(formProfil.photoProfil,{'attr' : {'class' : 'form-control'}}) }}
         {% if filename %}
         <img src ="{{ asset('photo_directory/' ~ filename) }}" />
         {% endif %}
-        <input type="submit" name="modifier" value="modifier profil" />
+        <input type="submit" name="modifier" value="modifier profil" class ='btn btn-primary mt-3'/>
     {{ form_end(formProfil) }}
+                                </div>
+                        </div>
+                </div>
+        </div>
 </div>
 {% endblock %}

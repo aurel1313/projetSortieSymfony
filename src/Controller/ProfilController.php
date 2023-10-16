@@ -49,7 +49,7 @@ class ProfilController extends AbstractController
                 $safeFilename = $slugger->slug($fileName);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$photo->guessExtension();
 
-            $participant->setPseudo($modifierParticipant->getPassword());
+
 
 
                 try {
