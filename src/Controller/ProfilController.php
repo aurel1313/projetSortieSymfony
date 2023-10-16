@@ -25,6 +25,7 @@ class ProfilController extends AbstractController
 
     {
         $id =$request->get('id');
+        $newFilename="";
         if($id){
             $participant = $participantsRepository->find($id);
         }

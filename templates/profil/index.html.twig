@@ -21,7 +21,9 @@
         {{ form_row(formProfil.actif) }}
         {{ form_row(formProfil.site_idsite) }}
         {{ form_row(formProfil.photoProfil) }}
+        {% if filename %}
         <img src ="{{ asset('photo_directory/' ~ filename) }}" />
+        {% endif %}
         <input type="submit" name="modifier" value="modifier profil" />
     {{ form_end(formProfil) }}
 </div>
