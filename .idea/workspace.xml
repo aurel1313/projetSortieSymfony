@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02faedaf-05c2-4a2d-981e-2c2f650ebe24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20231016065339.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20231017065216.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/photo_directory/logo-652ce2019759d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/photo_directory/logo-652ce234240c0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/photo_directory/logo-652e360be39a4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_12_02_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_12_02__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_12_04_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_12_04__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_13_35_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_10_2023_13_35__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +316,9 @@
       <workItem from="1697019952047" duration="7352000" />
       <workItem from="1697115746229" duration="53000" />
       <workItem from="1697115891853" duration="1298000" />
-      <workItem from="1697181088597" duration="4259000" />
+      <workItem from="1697181088597" duration="5916000" />
+      <workItem from="1697439131758" duration="2733000" />
+      <workItem from="1697525376861" duration="1169000" />
     </task>
     <servers />
   </component>

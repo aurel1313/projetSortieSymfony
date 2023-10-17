@@ -19,14 +19,13 @@
    {{ form_start(formProfil) }}
         {{ form_row(formProfil.pseudo ,{'attr' : {'class' : 'form-control'}}) }}
         {{ form_row(formProfil.email ,{'attr' : {'class' : 'form-control'}}) }}
-        {{ form_row(formProfil.password, { 'attr':{'disabled':'disabled', 'class' : 'form-control'}}) }}
-        {{ form_row(formProfil.nom ,{'attr' : {'class' : 'form-control'}}) }}
-        {{ form_row(formProfil.prenom ,{'attr' : {'class' : 'form-control'}}) }}
+        <div class="cache_selection">{{ form_row(formProfil.password, { 'attr':{'disabled':'disabled', 'class' : 'form-control'}}) }}</div>
+        <div class="cache_selection">{{ form_row(formProfil.nom ,{'attr' : {'class' : 'form-control'}}) }}</div>
+        <div class="cache_selection">{{ form_row(formProfil.prenom ,{'attr' : {'class' : 'form-control'}}) }}</div>
         {{ form_row(formProfil.telephone ,{'attr' : {'class' : 'form-control'}}) }}
-        {{ form_row(formProfil.administrateur ,{'attr' : {'class' : 'form-check-input','disabled':'disabled'}}) }}
-        {{ form_row(formProfil.actif ,{'attr' : {'class' : 'form-check-input','disabled':'disabled'}}) }}
-        {{ form_row(formProfil.site_idsite ,{'attr' : {'class' : 'form-control'}}) }}
-
+        <div class="cache_selection">{{ form_row(formProfil.administrateur ,{'attr' : {'class' : 'form-check-input','disabled':'disabled'}}) }}</div>
+        <div class="cache_selection"> {{ form_row(formProfil.actif ,{'attr' : {'class' : 'form-check-input','disabled':'disabled'}}) }}</div>
+        <div class="cache_selection">{{ form_row(formProfil.site_idsite ,{'attr' : {'class' : 'form-control'}}) }}</div>
 
         {{ form_row(formProfil.photoProfil,{'attr' : {'class' : 'form-control'}}) }}
         {% if filename %}
