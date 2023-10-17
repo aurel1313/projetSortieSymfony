@@ -80,12 +80,13 @@ class ParticipantsType extends AbstractType
             ->add('actif',CheckboxType::class,[
                 'label'=>'Actif: ',
                  'required'=>false,
-                'false_values' => [false]
+
             ])
             ->add('site_idsite',EntityType::class,[
                 'label'=>'Site: ',
                 'class' => Sites::class,
-                'choice_label' => 'nom'
+                'choice_label' => 'nom',
+
             ])
             ->add('photoProfil',FileType::class, [
                 'label'=>'ajouter une photo de profil',

@@ -39,6 +39,7 @@ class ProfilController extends AbstractController
             $participant->setPseudo($modifierParticipant->getPseudo());
             $participant->setRoles($modifierParticipant->getRoles());
             $participant->setNom($modifierParticipant->getNom());
+
             $participant->setPrenom($modifierParticipant->getPrenom());
             $participant->setPassword($modifierParticipant->getPassword());
             $participant->setSiteIdsite($modifierParticipant->getSiteIdSite());
@@ -63,9 +64,11 @@ class ProfilController extends AbstractController
             $entityManager->persist($participant);
             $entityManager->flush();
         }
+
         return $this->render('profil/index.html.twig', [
             'formProfil'=>$form,
-            'filename'=>$newFilename
+            'filename'=>$newFilename,
+
         ]);
     }
 }
