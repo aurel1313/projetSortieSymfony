@@ -41,9 +41,27 @@ class AppFixtures extends Fixture
         $participant1->setSiteIdsite($site);
         $manager->persist($participant1);
 
-        $etat = new Etats();
-        $etat->setLibelle('Créée');
-        $manager->persist($etat);
+        $etat1 = new Etats();
+        $etat1->setLibelle('En création');
+        $manager->persist($etat1);
+        $etat2 = new Etats();
+        $etat2->setLibelle('Ouverte');
+        $manager->persist($etat2);
+        $etat3 = new Etats();
+        $etat3->setLibelle('Clôturée');
+        $manager->persist($etat3);
+        $etat4 = new Etats();
+        $etat4->setLibelle('Activité en cours');
+        $manager->persist($etat4);
+        $etat5 = new Etats();
+        $etat5->setLibelle('Activité terminé');
+        $manager->persist($etat5);
+        $etat6 = new Etats();
+        $etat6->setLibelle('Activité historisée');
+        $manager->persist($etat6);
+        $etat7 = new Etats();
+        $etat7->setLibelle('Activité annulée');
+        $manager->persist($etat7);
 
         $ville = new Villes();
         $ville->setNom('Niort');
@@ -70,7 +88,7 @@ class AppFixtures extends Fixture
         $sortie->setPhotoSorties('https://www.lsa-conso.fr/mediatheque/1/8/3/000501381_896x598_c.jpg');
         $sortie->setSiteIdsite($site);
         $sortie->setLieuIdlieu($lieu);
-        $sortie->setEtatIdetat($etat);
+        $sortie->setEtatIdetat($etat1);
         $sortie->setParticipantIdparticipant($participant1);
         $manager->persist($sortie);
 

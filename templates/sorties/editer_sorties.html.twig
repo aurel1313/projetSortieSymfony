@@ -35,8 +35,12 @@
                 {{ form_row(form.site_idsite) }}
             </div>
             <div class="col-4">
-                {{ form_row(form.etat_idetat_id) }}
+                {{ form_row(form.etat_idetat) }}
             </div>
+            <div class="col-4">
+                {{ form_row(form.lieu_idlieu) }}
+            </div>
+
         </div>
 
         {% if app.request.get('_route') == "app_sorties_ajouter" %}

@@ -2,6 +2,21 @@
 
 {% block body %}
 
+        <form method="GET" action="{{ path('app_sorties_lister') }}">
+            <label for="tri">Trier par :</label>
+            <select name="tri" id="tri">
+                <option value="nom">Nom</option>
+                <option value="date">Date</option>
+                <!-- Ajoutez d'autres options de tri si nécessaire -->
+            </select>
+            <label for="ordre">Ordre :</label>
+            <select name="ordre" id="ordre">
+                <option value="asc">Ascendant</option>
+                <option value="desc">Descendant</option>
+            </select>
+            <button type="submit">Trier</button>
+        </form>
+
     <a href="{{ path('app_sorties_ajouter') }}" class="btn btn-primary">Ajouter une sortie</a>
 
     <table class="table table-striped">
@@ -20,11 +35,17 @@
                 <td>{{ sortie.nom }}</td>
                 <td>{{ sortie.infoSorties }}</td>
                 <td>{{ sortie.nombreInscriptionMax }}</td>
-                <td>{{ sortie.dateLimiteInscription | date('d/m/Y') }}</td>
+                <td>{{ sortie.dateHeureDebut | date('d/m/Y') }}</td>
                 <td>{{ sortie.lieuIdlieu.nom}}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('app_sorties_modifier', { 'id' : sortie.id }) }}">modifier</a>}
-                    <a class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sortie.id }) }}">supprimer</a>}
+                    <a class="btn btn-primary" href="{{ path('app_sorties_modifier', { 'id' : sortie.id }) }}">modifier</a>
+                    <a class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sortie.id }) }}">supprimer</a>
+                    {% if sortie.participantIdparticipant == app.user%}
+                        <a class="btn btn-danger" href="{{ path('app_sorties_desinscrire', { 'id' : sortie.id }) }}">Se désinscrire</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="{{ path('app_sorties_inscrire', { 'id' : sortie.id }) }}">S'inscrire</a>
+                    {% endif %}
+
                 </td>
             </tr>
         {% endfor %}

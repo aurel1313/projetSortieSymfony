@@ -68,7 +68,6 @@ class Sites
     public function removeSorty(Sorties $sorty): static
     {
         if ($this->sorties->removeElement($sorty)) {
-            // set the owning side to null (unless already changed)
             if ($sorty->getSiteIdsite() === $this) {
                 $sorty->setSiteIdsite(null);
             }

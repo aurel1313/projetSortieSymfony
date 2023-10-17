@@ -15,7 +15,7 @@ class Etats
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 8)]
+    #[ORM\Column(length: 50)]
     private ?string $libelle = null;
 
     #[ORM\OneToMany(mappedBy: 'etat_idetat', targetEntity: Sorties::class)]

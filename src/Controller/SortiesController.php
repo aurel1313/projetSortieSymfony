@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Sorties;
-use App\Controller\SortiesController;
+use App\Entity\Etats;
 use App\Repository\ParticipantsRepository;
 use App\Repository\SortiesRepository;
+use App\Entity\Sorties;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -86,4 +86,84 @@ class SortiesController extends AbstractController
 
         return $this->redirectToRoute('app_sorties_lister');
     }
+
+
+
+    #[Route('/inscrire/{id}', name: '_inscrire')]
+    public function inscription(EntityManagerInterface $entityManager, SortiesRepository $sortieRepository, ParticipantsRepository $participantRepository, int $id = null): Response
+    {
+
+        if ($id !== null) {
+            $sortie = $sortieRepository->find($id);
+            $userco = $this->getUser();
+
+            if ($userco !== null  && $sortie->getDateLimiteInscription() >= date("Y-m-d"))
+            {
+                $sortie->addParticipant($userco);
+
+//                dd($sortie, $userco);
+                $entityManager->persist($sortie);
+                $entityManager->flush();
+            }
+            else
+            {
+                $this->addFlash(
+                    'error',
+                    "Il n'y a plus de place disponible ou la date limite d'inscription est dépassée."
+                );
+                return $this->redirectToRoute('app_sorties_lister');
+            }
+
+            if ($userco !== null && $sortie->getDateLimiteInscription() < date("Y-m-d"))
+            {
+                //CHANGER L'ETAT DE LA SORTIE
+            }
+
+            $this->addFlash(
+                'success',
+                'Vous êtes bien inscrit à la sortie !'
+            );
+        }
+
+        return $this->redirectToRoute('app_sorties_lister');
+    }
+
+
+
+    #[Route('/desinscrire/{id}', name: '_desinscrire')]
+    public function desinscrire(EntityManagerInterface $entityManager, SortiesRepository $sortieRepository, int $id = null): Response
+    {
+//        if ($id !== null) {
+//            $sortie = $sortieRepository->find($id);
+//            $userco = $this->getUser();
+//
+//            if ($userco !== null && $sortie !== null) {
+//                // Récupérer la liste des participants
+//                $participants = $sortie->getParticipants();
+//
+//                if ($participants !== null && $participants->contains($userco)) {
+//                    // Supprimer l'utilisateur de la liste des participants
+//                    $participants->removeElement($userco);
+//                    $entityManager->persist($sortie);
+//                    $entityManager->flush();
+//
+//                    $this->addFlash(
+//                        'success',
+//                        'Vous êtes désinscrit de la sortie !'
+//                    );
+//                } else {
+//                    $this->addFlash(
+//                        'error',
+//                        "Vous n'êtes pas inscrit à cette sortie."
+//                    );
+//                }
+//            }
+//        }
+//
+        return $this->redirectToRoute('app_sorties_lister');
+    }
+
+
+
+
 }

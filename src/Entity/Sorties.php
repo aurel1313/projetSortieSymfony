@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\SortiesRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 #[ORM\Entity(repositoryClass: SortiesRepository::class)]
 class Sorties
@@ -52,6 +55,10 @@ class Sorties
     #[ORM\ManyToOne(inversedBy: 'sorties')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Etats $etat_idetat = null;
+
+    #[ORM\ManyToMany(targetEntity: Participants::class, inversedBy: 'sorties')]
+    #[ORM\JoinColumn(name: "participant_id", referencedColumnName:"id")]
+    private Collection $participants;
 
     public function getId(): ?int
     {
@@ -154,7 +161,7 @@ class Sorties
         return $this;
     }
 
-    public function getParticipantIdparticipant(): ?participants
+        public function getParticipantIdparticipant(): ?participants
     {
         return $this->participant_idparticipant;
     }
@@ -201,4 +208,34 @@ class Sorties
 
         return $this;
     }
+
+    // ...
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Participant", mappedBy="sorties")
+     */
+
+    public function __construct()
+    {
+        $this->participants = new ArrayCollection();
+        $this->userInscrits = new ArrayCollection();
+    }
+
+    // ...
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getParticipants(): ArrayCollection
+    {
+        return $this->participants ?: new ArrayCollection();
+    }
+
+    public function addParticipant(Participants $participant): self
+    {
+        $this->participant = $participant;
+
+        return $this;
+    }
+
 }

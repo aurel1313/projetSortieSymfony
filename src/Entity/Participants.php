@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ParticipantsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -59,6 +61,14 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $PhotoProfil = null;
+
+    #[ORM\ManyToMany(targetEntity: Sorties::class, mappedBy: "participants")]
+    private $sorties;
+
+    public function __construct()
+    {
+        $this->sorties = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -237,4 +247,34 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Sorties>
+     */
+    public function getSorties(): Collection
+    {
+        return $this->sorties;
+    }
+
+    public function addSorties(Sorties $sorties): static
+    {
+        if (!$this->sorties->contains($sorties))
+        {
+            $this->sorties->add($sorties);
+            $sorties->addParticipant($this);
+        }
+
+        return $this;
+    }
+
+    public function removesorties(Sorties $sorties): static
+    {
+        if ($this->sorties->removeElement($sorties)) {
+            $sorties->removeUserInscrit($this);
+        }
+
+        return $this;
+    }
+
+
 }

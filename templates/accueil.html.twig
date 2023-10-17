@@ -5,8 +5,8 @@
     <div class="container">
         <div class="row justify-content-end">
             <div class="col text-right">
-                <h6>Date du jour: </h6>
-                <h6>Pseudo: </h6>
+                <h6>Date du jour: {{ "now"|date("d-m-Y") }}</h6>
+                <h6>Pseudo: {{ app.user.pseudo }}</h6>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
 
     <h1 class="text-center">Liste des sorties</h1>
     <div class="text-center p-5">
-        <a class="btn btn-outline-primary" href="">Créer une sortie</a>
+        <a class="btn btn-outline-primary" href="{{ path('app_sorties_ajouter')}}">Créer une sortie</a>
     </div>
 
     <div>
@@ -86,10 +86,18 @@
                 <th>{{ sorties.etatIdetat.libelle }}</th>
                 <th>
                     {% if is_granted('ROLE_USER') %}
-                        <a class="btn btn-primary" href="">S'inscrire</a>
+                           {% if 'participantIdparticipant' in sortie %}
+                            {% if sortie.nom == app.user %}
+                                <a class="btn btn-danger" href="{{ path('app_sorties_desinscrire', { 'id' : sortie.id }) }}">Se désinscrire</a>
+                            {% else %}
+                                <a class="btn btn-primary" href="{{ path('app_sorties_inscrire', { 'id' : sortie.id }) }}">S'inscrire</a>
+                            {% endif %}
+                        {% endif %}
                     {% endif %}
+
                     <a class="btn btn-outline-primary" href="{{ path('app_sorties_modifier', { 'id' : sorties.id }) }}">modifier</a>
                     <a class="btn btn-outline-danger" onclick="return confirm('Êtes vous sûr ?')" href="{{ path('app_sorties_supprimer', { 'id' : sorties.id }) }}">supprimer</a>
+
                 </th>
             </tr>
             {% endfor %}

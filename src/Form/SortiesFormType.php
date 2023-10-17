@@ -34,20 +34,27 @@ class SortiesFormType extends AbstractType
                 'mapped' => false,
                 'choice_label' => 'pseudo'
             ])
-            ->add('site_idsite', EntityType::class,[
+
+            ->add('site_idsite', EntityType::class, [
                 'class' => Sites::class,
-                'mapped' => false,
-                'choice_label' => 'nom'
+                'choice_label' => 'nom',
+                'placeholder' => 'Sélectionnez un site',
+                'required' => true,
             ])
-//            ->add('lieu_idlieu_id', EntityType::class,[
-//                'class' => Lieux::class,
-//                'mapped' => false,
-//                'choice_label' => 'nom'
-//            ])
-            ->add('etat_idetat_id',EntityType::class,[
+
+
+            ->add('lieu_idlieu', EntityType::class, [
+                'class' => Lieux::class,
+                'choice_label' => 'nom',
+                'placeholder' => 'Sélectionnez un lieu',
+                'required' => true
+            ])
+
+            ->add('etat_idetat',EntityType::class,[
                 'class' => Etats::class,
-                'mapped' => false,
-                'choice_label' => 'libelle'
+                'choice_label' => 'libelle',
+                'placeholder' => 'Sélectionnez un lieu',
+                'required' => true
             ])
         ;
     }
