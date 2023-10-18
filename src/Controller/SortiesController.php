@@ -101,7 +101,6 @@ class SortiesController extends AbstractController
             {
                 $sortie->addParticipant($userco);
 
-//                dd($sortie, $userco);
                 $entityManager->persist($sortie);
                 $entityManager->flush();
             }
@@ -111,7 +110,7 @@ class SortiesController extends AbstractController
                     'error',
                     "Il n'y a plus de place disponible ou la date limite d'inscription est dépassée."
                 );
-                return $this->redirectToRoute('app_sorties_lister');
+                return $this->redirectToRoute('app_accueil');
             }
 
             if ($userco !== null && $sortie->getDateLimiteInscription() < date("Y-m-d"))
@@ -125,7 +124,7 @@ class SortiesController extends AbstractController
             );
         }
 
-        return $this->redirectToRoute('app_sorties_lister');
+        return $this->redirectToRoute('app_accueil');
     }
 
 
@@ -133,34 +132,34 @@ class SortiesController extends AbstractController
     #[Route('/desinscrire/{id}', name: '_desinscrire')]
     public function desinscrire(EntityManagerInterface $entityManager, SortiesRepository $sortieRepository, int $id = null): Response
     {
-//        if ($id !== null) {
-//            $sortie = $sortieRepository->find($id);
-//            $userco = $this->getUser();
+        if ($id !== null) {
+            $sortie = $sortieRepository->find($id);
+            $userco = $this->getUser();
+
+            if ($userco !== null && $sortie !== null) {
+                // Récupérer la liste des participants
+                $participants = $sortie->getParticipants();
+
+                if ($participants !== null && $participants->contains($userco)) {
+                    // Supprimer l'utilisateur de la liste des participants
+                    $sortie->removeParticipant($userco);
+                    $entityManager->persist($sortie);
+                    $entityManager->flush();
+
+                    $this->addFlash(
+                        'success',
+                        'Vous êtes désinscrit de la sortie !'
+                    );
+                } else {
+                    $this->addFlash(
+                        'error',
+                        "Vous n'êtes pas inscrit à cette sortie."
+                    );
+                }
+            }
+        }
 //
-//            if ($userco !== null && $sortie !== null) {
-//                // Récupérer la liste des participants
-//                $participants = $sortie->getParticipants();
-//
-//                if ($participants !== null && $participants->contains($userco)) {
-//                    // Supprimer l'utilisateur de la liste des participants
-//                    $participants->removeElement($userco);
-//                    $entityManager->persist($sortie);
-//                    $entityManager->flush();
-//
-//                    $this->addFlash(
-//                        'success',
-//                        'Vous êtes désinscrit de la sortie !'
-//                    );
-//                } else {
-//                    $this->addFlash(
-//                        'error',
-//                        "Vous n'êtes pas inscrit à cette sortie."
-//                    );
-//                }
-//            }
-//        }
-//
-        return $this->redirectToRoute('app_sorties_lister');
+        return $this->redirectToRoute('app_accueil');
     }
 
 
