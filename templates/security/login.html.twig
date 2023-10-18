@@ -29,6 +29,7 @@
                         </div>
 
                         <label><input type="checkbox" name="_remember_me"> Se souvenir de moi</label>
+                        <a href="{{ path('app_forgot_password_request') }}" class="ms-5">Mot de passe oublié ?</a>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <button type="submit" class="btn btn-primary btn-lg"

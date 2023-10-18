@@ -13,6 +13,9 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(SortiesController $sortiesController,SortiesRepository $sortiesRepository,ParticipantsRepository $participantsRepository): Response
     {
+        if(!$this->getUser()){
+            return $this->redirectToRoute('app_login');
+        }
         $sorties = $sortiesRepository->findAll();
 
         $participant = $participantsRepository->findAll();

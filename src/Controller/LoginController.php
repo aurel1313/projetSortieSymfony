@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Participants;
 use App\Form\RegistrationFormType;
+use App\Repository\ParticipantsRepository;
 use App\Security\LoginAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -63,4 +64,5 @@ class LoginController extends AbstractController
        return $this->redirectToRoute('app_login');
         //throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
+
 }

@@ -3,13 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Participants;
+use App\Entity\ResetPasswordRequest;
 use App\Form\ParticipantsType;
+use App\Repository\ResetPasswordRequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 Use App\Repository\ParticipantsRepository;
+
+use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
 
 class AdminController extends AbstractController
 {
@@ -46,10 +50,16 @@ class AdminController extends AbstractController
     }
 
     #[Route('/admin/supprimer/{id}', name: 'app_admin_supprimer')]
-    public function supprimer(ParticipantsRepository $participantsRepository,Request $request , EntityManagerInterface $entityManager, int $id = null): Response
+    public function supprimer(ParticipantsRepository $participantsRepository,ResetPasswordRequestRepository $resetPasswordRequestRepository,Request $request , EntityManagerInterface $entityManager, int $id = null,ResetPasswordHelperInterface $resetPasswordHelper): Response
     {
         $participant = $participantsRepository->find($id);
+
+
+
+
+
         $entityManager->remove($participant);
+
         $entityManager->flush();
 
         return $this->redirectToRoute('app_admin');

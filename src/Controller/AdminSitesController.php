@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelper;
 
 #[Route('/admin_sites', name: 'app_admin_sites')]
 class AdminSitesController extends AbstractController
@@ -53,6 +54,8 @@ class AdminSitesController extends AbstractController
     {
         $sites = $sitesRepository->find($id);
         $entityManager->remove($sites);
+
+
         $entityManager->flush();
 
         return $this->redirectToRoute('app_admin_sites_lister');
