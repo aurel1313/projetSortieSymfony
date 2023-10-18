@@ -106,12 +106,10 @@
                 <th>{{ sorties.etatIdetat.libelle }}</th>
                 <th>
                     {% if is_granted('ROLE_USER') %}
-                           {% if 'participantIdparticipant' in sortie %}
-                            {% if sortie.nom == app.user %}
-                                <a class="btn btn-danger" href="{{ path('app_sorties_desinscrire', { 'id' : sortie.id }) }}">Se désinscrire</a>
-                            {% else %}
-                                <a class="btn btn-primary" href="{{ path('app_sorties_inscrire', { 'id' : sortie.id }) }}">S'inscrire</a>
-                            {% endif %}
+                        {% if app.user in sorties.participants %}
+                            <a class="btn btn-danger" href="{{ path('app_sorties_desinscrire', { 'id' : sorties.id }) }}">Se désinscrire</a>
+                        {% else %}
+                            <a class="btn btn-primary" href="{{ path('app_sorties_inscrire', { 'id' : sorties.id }) }}">S'inscrire</a>
                         {% endif %}
                     {% endif %}
 

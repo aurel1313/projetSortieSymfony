@@ -110,7 +110,7 @@ class SortiesController extends AbstractController
                     'error',
                     "Il n'y a plus de place disponible ou la date limite d'inscription est dépassée."
                 );
-                return $this->redirectToRoute('app_sorties_lister');
+                return $this->redirectToRoute('app_accueil');
             }
 
             if ($userco !== null && $sortie->getDateLimiteInscription() < date("Y-m-d"))
@@ -124,7 +124,7 @@ class SortiesController extends AbstractController
             );
         }
 
-        return $this->redirectToRoute('app_sorties_lister');
+        return $this->redirectToRoute('app_accueil');
     }
 
 
@@ -159,7 +159,7 @@ class SortiesController extends AbstractController
             }
         }
 //
-        return $this->redirectToRoute('app_sorties_lister');
+        return $this->redirectToRoute('app_accueil');
     }
 
 
