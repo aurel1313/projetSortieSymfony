@@ -101,7 +101,6 @@ class SortiesController extends AbstractController
             {
                 $sortie->addParticipant($userco);
 
-//                dd($sortie, $userco);
                 $entityManager->persist($sortie);
                 $entityManager->flush();
             }
@@ -133,32 +132,32 @@ class SortiesController extends AbstractController
     #[Route('/desinscrire/{id}', name: '_desinscrire')]
     public function desinscrire(EntityManagerInterface $entityManager, SortiesRepository $sortieRepository, int $id = null): Response
     {
-//        if ($id !== null) {
-//            $sortie = $sortieRepository->find($id);
-//            $userco = $this->getUser();
-//
-//            if ($userco !== null && $sortie !== null) {
-//                // Récupérer la liste des participants
-//                $participants = $sortie->getParticipants();
-//
-//                if ($participants !== null && $participants->contains($userco)) {
-//                    // Supprimer l'utilisateur de la liste des participants
-//                    $participants->removeElement($userco);
-//                    $entityManager->persist($sortie);
-//                    $entityManager->flush();
-//
-//                    $this->addFlash(
-//                        'success',
-//                        'Vous êtes désinscrit de la sortie !'
-//                    );
-//                } else {
-//                    $this->addFlash(
-//                        'error',
-//                        "Vous n'êtes pas inscrit à cette sortie."
-//                    );
-//                }
-//            }
-//        }
+        if ($id !== null) {
+            $sortie = $sortieRepository->find($id);
+            $userco = $this->getUser();
+
+            if ($userco !== null && $sortie !== null) {
+                // Récupérer la liste des participants
+                $participants = $sortie->getParticipants();
+
+                if ($participants !== null && $participants->contains($userco)) {
+                    // Supprimer l'utilisateur de la liste des participants
+                    $sortie->removeParticipant($userco);
+                    $entityManager->persist($sortie);
+                    $entityManager->flush();
+
+                    $this->addFlash(
+                        'success',
+                        'Vous êtes désinscrit de la sortie !'
+                    );
+                } else {
+                    $this->addFlash(
+                        'error',
+                        "Vous n'êtes pas inscrit à cette sortie."
+                    );
+                }
+            }
+        }
 //
         return $this->redirectToRoute('app_sorties_lister');
     }

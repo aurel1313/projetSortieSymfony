@@ -12,52 +12,72 @@
     </div>
 
     <h1 class="text-center">Filtrer les sorties</h1>
-    <div class="container text-center">
+    <form action="{{ path('app_accueil') }}" method="post" class="container text-center">
         <div class="row d-flex justify-content-center p-3">
             <div class="col-lg-5">
                 <div class="mb-3">
-                    <input  class="form-control"placeholder="Rechercher une sortie par mot-clé">
+                    <input type="text" class="form-control my-4" placeholder="Rechercher par mot-clé" id="name" name="name">
                 </div>
                 <div class="mb-3">
-                    <input  class="form-control"placeholder="Choisir un site">
+                    <select class="form-control" name="campus">
+                        <option value="" selected disabled hidden>Site</option>
+                        {% for site in sites %}
+                            <option value="{{ site.id }}">{{ site.nom }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <input  class="form-control"placeholder="Choisir le statut">
+                    <select  class="form-control" name="status">
+                        <option value="" selected disabled hidden>Choisir un statut</option>
+                        {% for key,status in filterStatus %}
+                            <option value="{{ key }}">{{ status }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex flex-row flex-wrap gap-2 mt-4">
+                <div class="form-group" style="flex: 1; min-width: 150px">
+                    <label class="form-label fw-bold">Date de début</label>
+                    <input type="date" class="form-control" name="dateStart">
+                </div>
+                <div class="form-group" style="flex: 1; min-width: 150px">
+                    <label class="form-label fw-bold">Date de fin</label>
+                    <input type="date" class="form-control" name="dateEnd">
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input name="organizing" class="form-check-input" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Sorties dont je suis l'organisateur.trice
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input name="participating" class="form-check-input" type="checkbox" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">
                         Sorties auxquelles je suis inscrit.e
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input name="not-participating" class="form-check-input" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Sorties auxquelles je ne suis pas inscrit.e
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input name="passed" class="form-check-input" type="checkbox" id="flexCheckChecked" >
                     <label class="form-check-label" for="flexCheckChecked">
                         Sorties passées
                     </label>
                 </div>
 
                 <div class="container text-center">
-                    <a class="btn btn-outline-secondary p-1" href="">Rechercher</a> <a class="btn btn-outline-secondary p-1" href="">Réinitialiser</a>
+                    <input type="submit" class="btn btn-outline-secondary p-1" value="Rechercher"> <a class="btn btn-outline-secondary p-1" href="{{ path('app_accueil') }}">Réinitialiser</a>
                 </div>
 
             </div>
         </div>
-    </div>
+    </form>
 
     <h1 class="text-center">Liste des sorties</h1>
     <div class="text-center p-5">

@@ -20,7 +20,7 @@ class Sorties
     #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
         private ?\DateTimeInterface $dateHeureDebut = null;
 
     #[ORM\Column(nullable: true)]
@@ -224,16 +224,25 @@ class Sorties
     // ...
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getParticipants(): ArrayCollection
+    public function getParticipants(): Collection
     {
-        return $this->participants ?: new ArrayCollection();
+        return $this->participants;
     }
 
     public function addParticipant(Participants $participant): self
     {
-        $this->participant = $participant;
+        if (!$this->participants->contains($participant)) {
+            $this->participants->add($participant);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipant(Participants $participant): static
+    {
+        $this->participants->removeElement($participant);
 
         return $this;
     }
