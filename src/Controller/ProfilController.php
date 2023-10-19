@@ -28,6 +28,7 @@ class ProfilController extends AbstractController
         $newFilename="";
         if($id){
             $participant = $participantsRepository->find($id);
+          // dd($participant->getPhotoProfil());
         }
         $form= $this->createForm(ParticipantsType::class,$participant);
         $form->handleRequest($request);
@@ -68,6 +69,7 @@ class ProfilController extends AbstractController
         return $this->render('profil/index.html.twig', [
             'formProfil'=>$form,
             'filename'=>$newFilename,
+            'photo'=>$participant->getPhotoProfil()
 
         ]);
     }

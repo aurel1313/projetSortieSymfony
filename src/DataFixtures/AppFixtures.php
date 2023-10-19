@@ -45,6 +45,7 @@ class AppFixtures extends Fixture
             )
         );
         $participant1->setAdministrateur(true);
+        $participant1->setRoles(['ROLE_ADMIN']);
         $participant1->setActif(true);
         $participant1->setSiteIdsite($site);
         $manager->persist($participant1);

@@ -29,7 +29,23 @@
                 {{ form_row(form.photo_sorties) }}
             </div>
             <div class="col-4">
-                {{ form_row(form.participant_idparticipant_id) }}
+                {{ form_row(form.participant_idparticipant_id, { 'attr': {'style': 'display: none;'}}) }}
+
+
+                    {# Affiche uniquement le user connecté #}
+
+
+
+                {% for users in form.participant_idparticipant_id.vars.choices  %}
+
+                    {% if users.data.id== app.user.id %}
+                    <label>Organisateur: </label>
+                        {{ users.data.pseudo }}
+                    {% endif %}
+                {% endfor %}
+
+
+
             </div>
             <div class="col-4">
                 {{ form_row(form.site_idsite) }}
@@ -39,6 +55,9 @@
             </div>
             <div class="col-4">
                 {{ form_row(form.lieu_idlieu) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(form.motif_annulation) }}
             </div>
 
         </div>
