@@ -26,10 +26,13 @@ class LoginController extends AbstractController
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
+        if($error){
+            $error = "Email ou mot de passe Incorrect";
+        }
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => "Mauvais mot de passe ou Email"]);
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, LoginAuthenticator $loginAuthenticator, EntityManagerInterface $entityManager): Response
@@ -51,7 +54,7 @@ class LoginController extends AbstractController
             $entityManager->flush();
 
 
-            return $this->redirectToRoute('/accueil');
+            return $this->redirectToRoute('app_accueil');
         }
 
         return $this->render('registration/register.html.twig', [
