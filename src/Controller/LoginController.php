@@ -20,20 +20,19 @@ class LoginController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
-
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
+<<<<<<< HEAD
         if($error){
             $error = "Email ou mot de passe Incorrect";
         }
         // last username entered by the user
+=======
+>>>>>>> 1ca3fb519b9daa549b4d6e364b87825e733d29d8
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
+
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, LoginAuthenticator $loginAuthenticator, EntityManagerInterface $entityManager): Response
     {
