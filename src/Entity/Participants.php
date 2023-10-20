@@ -37,10 +37,10 @@ class Participants implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50,unique: true)]
     private ?string $pseudo = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50,nullable: true)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50,nullable: true)]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 50, nullable: true)]

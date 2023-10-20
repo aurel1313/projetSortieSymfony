@@ -28,6 +28,7 @@ class AdminController extends AbstractController
             $participant = new Participants();
         }else{
             $participant = $participantsRepository->find($id);
+
         }
 
         $form = $this->createForm(ParticipantsType::class,$participant);
