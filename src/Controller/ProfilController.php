@@ -33,7 +33,7 @@ class ProfilController extends AbstractController
         $form= $this->createForm(ParticipantsType::class,$participant);
         $form->handleRequest($request);
         $modifierParticipant = $form->getData();
-
+        // si formulaire est soumis et valid//
         if($form->isSubmitted() && $form->isValid()){
             $participant->setEmail($modifierParticipant->getEmail());
 
